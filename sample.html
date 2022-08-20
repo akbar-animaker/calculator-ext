@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      .parent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      #child {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        margin: auto;
+
+        border: 1px solid red;
+      }
+      #marker {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        opacity: 1;
+        border-radius: 100%;
+        transition: all 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div id="child"></div>
+      <div id="marker"></div>
+    </div>
+
+    <script>
+      let bound = document.getElementById("child").getBoundingClientRect();
+      const marker = document.getElementById("marker");
+      marker.style.left = bound.left;
+      marker.style.top = bound.top;
+
+      const position = document.addEventListener("keydown", onKeyDown);
+
+      function onKeyDown(e) {
+        if (e.code === "ArrowRight") {
+          marker.style.left = bound.right - 20;
+        } else if (e.code === "ArrowLeft") {
+          marker.style.left = bound.left;
+        } else if (e.code === "ArrowUp") {
+          marker.style.top = bound.top;
+        } else if (e.code === "ArrowDown") {
+          marker.style.top = bound.bottom - 20;
+        } else {
+          //
+        }
+      }
+
+      // const { left, top, width, height } = bound;
+    </script>
+  </body>
+</html>
