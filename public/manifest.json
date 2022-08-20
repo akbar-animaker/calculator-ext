@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "calculator-chrome-extension",
+  "version": "1.0.1",
+  "description": "We can use this app for simple  calculations.",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Calculator App"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "16": "logo192.png"
+  }
+}
